@@ -271,18 +271,169 @@
             margin-top: 0.25rem;
         }
 
+        /* Responsive - Tablet Landscape */
         @media (max-width: 1024px) {
             .article-container {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .sidebar {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
         }
 
+        /* Responsive - Tablet Portrait */
         @media (max-width: 768px) {
             .article-title {
                 font-size: 1.5rem;
             }
             .form-row {
                 grid-template-columns: 1fr;
+            }
+            .article-header {
+                padding: 1.5rem 1.5rem 0;
+            }
+            .article-content {
+                padding: 0 1.5rem 1.5rem;
+                font-size: 1rem;
+            }
+            .article-image {
+                padding: 0 1.5rem !important;
+            }
+            .comments-section {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+            .article-meta {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Responsive - Mobile Large */
+        @media (max-width: 480px) {
+            .article {
+                border-radius: 16px;
+            }
+            .article-header {
+                padding: 1rem 1rem 0;
+            }
+            .article-category {
+                padding: 0.25rem 0.75rem;
+                font-size: 0.7rem;
+            }
+            .article-title {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+            .article-meta {
+                font-size: 0.8rem;
+                gap: 0.75rem;
+                padding-bottom: 1rem;
+            }
+            .article-meta-item {
+                gap: 0.375rem;
+            }
+            .article-author-avatar {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+            .article-image {
+                padding: 0 1rem !important;
+            }
+            .article-image img {
+                border-radius: 10px;
+            }
+            .article-content {
+                padding: 0 1rem 1rem;
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+            .comments-section {
+                margin-top: 1.5rem;
+                padding: 1rem;
+                border-radius: 14px;
+            }
+            .comments-title {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            .comment-form {
+                margin-bottom: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            .form-label {
+                font-size: 0.9rem;
+            }
+            .form-control {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+                border-radius: 8px;
+            }
+            textarea.form-control {
+                min-height: 100px;
+            }
+            .comment-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+            .comment-author {
+                font-size: 0.9rem;
+            }
+            .comment-date {
+                font-size: 0.7rem;
+            }
+            .comment-content {
+                font-size: 0.9rem;
+            }
+            .sidebar-widget {
+                padding: 1rem;
+                border-radius: 12px;
+            }
+            .widget-title {
+                font-size: 0.9rem;
+            }
+            .related-item img {
+                width: 70px;
+                height: 50px;
+            }
+            .related-item-content h4 {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Responsive - Mobile Small */
+        @media (max-width: 375px) {
+            .article-title {
+                font-size: 1.1rem;
+            }
+            .article-content {
+                font-size: 0.9rem;
+            }
+            .comment-item {
+                gap: 0.75rem;
+            }
+            .comment-avatar {
+                width: 36px;
+                height: 36px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Touch optimization */
+        @media (hover: none) and (pointer: coarse) {
+            .related-item:hover h4 {
+                color: var(--dark);
+            }
+            .related-item:active h4 {
+                color: var(--primary);
             }
         }
     </style>

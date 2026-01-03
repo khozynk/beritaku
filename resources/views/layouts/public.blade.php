@@ -522,10 +522,13 @@
             border: 1px solid rgba(34, 197, 94, 0.2);
         }
 
-        /* Responsive */
+        /* Responsive - Desktop (default) */
+        
+        /* Tablet Landscape (1024px) */
         @media (max-width: 1024px) {
             .news-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
             .hero-content {
                 grid-template-columns: 1fr;
@@ -533,23 +536,295 @@
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .sidebar-news {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
         }
 
+        /* Tablet Portrait (768px) */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
+            .search-box {
+                display: none;
+            }
+            .nav {
+                gap: 1rem;
+            }
             .news-grid {
                 grid-template-columns: 1fr;
+                gap: 1.25rem;
             }
             .featured-card {
-                height: 300px;
+                height: 280px;
             }
             .featured-title {
                 font-size: 1.25rem;
             }
+            .featured-overlay {
+                padding: 1.5rem;
+            }
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .section-title {
+                font-size: 1.25rem;
+            }
+            .hero {
+                padding: 2rem 0;
+                margin-bottom: 2rem;
+            }
+            .sidebar-news {
+                grid-template-columns: 1fr;
+            }
+            .categories {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 0.5rem;
+                -webkit-overflow-scrolling: touch;
+            }
+            .category-pill {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .btn {
+                padding: 0.625rem 1rem;
+                font-size: 0.8rem;
+            }
+            .main-content {
+                padding: 1.5rem 0 3rem;
+            }
+            .container {
+                padding: 0 0.75rem;
+            }
+        }
+
+        /* Mobile Large - Android/iPhone Plus (480px) */
+        @media (max-width: 480px) {
+            .header {
+                padding: 0.75rem 0;
+            }
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+                border-radius: 10px;
+            }
+            .logo-text {
+                font-size: 1.25rem;
+            }
+            .featured-card {
+                height: 220px;
+                border-radius: 16px;
+            }
+            .featured-title {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            .featured-category {
+                padding: 0.25rem 0.75rem;
+                font-size: 0.65rem;
+                margin-bottom: 0.5rem;
+            }
+            .featured-meta {
+                font-size: 0.75rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .featured-overlay {
+                padding: 1rem;
+            }
+            .news-card {
+                border-radius: 12px;
+            }
+            .news-card-image {
+                height: 160px;
+            }
+            .news-card-body {
+                padding: 1rem;
+            }
+            .news-card-title {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            .news-card-excerpt {
+                font-size: 0.8rem;
+                margin-bottom: 0.75rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .news-card-meta {
+                font-size: 0.7rem;
+            }
+            .author-avatar {
+                width: 24px;
+                height: 24px;
+                font-size: 0.6rem;
+            }
+            .section-title {
+                font-size: 1.1rem;
+            }
+            .section-title::before {
+                width: 3px;
+                height: 22px;
+            }
+            .view-all {
+                font-size: 0.85rem;
+            }
+            .footer {
+                padding: 2.5rem 0 1.5rem;
+            }
+            .footer-title {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            .footer-brand p {
+                font-size: 0.8rem;
+            }
+            .footer-links a {
+                font-size: 0.8rem;
+            }
+            .footer-bottom {
+                font-size: 0.75rem;
+                padding-top: 1.5rem;
+            }
+            .alert {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+            .sidebar-card {
+                padding: 0.75rem;
+            }
+            .sidebar-card img {
+                width: 70px;
+                height: 50px;
+            }
+            .sidebar-card-content h4 {
+                font-size: 0.8rem;
+            }
+            .btn-primary, .btn-outline {
+                padding: 0.5rem 0.875rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Mobile Small - iPhone SE, small Android (375px) */
+        @media (max-width: 375px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            .logo-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            .featured-card {
+                height: 200px;
+            }
+            .featured-title {
+                font-size: 0.95rem;
+            }
+            .news-card-image {
+                height: 140px;
+            }
+            .news-card-title {
+                font-size: 0.95rem;
+            }
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .news-card:hover {
+                transform: none;
+            }
+            .news-card:active {
+                transform: scale(0.98);
+            }
+            .sidebar-card:hover {
+                transform: none;
+            }
+            .sidebar-card:active {
+                background: rgba(255,255,255,0.15);
+            }
+            .category-pill:hover {
+                background: white;
+                border-color: var(--border);
+                color: var(--gray);
+            }
+            .category-pill:active,
+            .category-pill.active {
+                background: var(--primary);
+                border-color: var(--primary);
+                color: white;
+            }
+            .btn:hover {
+                transform: none;
+            }
+            .btn:active {
+                transform: scale(0.95);
+            }
+        }
+
+        /* Landscape mode for mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                padding: 1.5rem 0;
+                margin-bottom: 1.5rem;
+            }
+            .featured-card {
+                height: 200px;
+            }
+            .main-content {
+                padding: 1rem 0 2rem;
+            }
+        }
+
+        /* High DPI screens (Retina) */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .news-card-image img,
+            .featured-card img,
+            .sidebar-card img {
+                image-rendering: -webkit-optimize-contrast;
+            }
+        }
+
+        /* Safe area for iPhone X and newer (notch) */
+        @supports (padding-top: env(safe-area-inset-top)) {
+            .header {
+                padding-top: max(1rem, env(safe-area-inset-top));
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+            .footer {
+                padding-bottom: max(2rem, env(safe-area-inset-bottom));
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header, .footer, .search-box, .nav-actions, .categories {
+                display: none !important;
+            }
+            .news-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
             }
         }
     </style>
