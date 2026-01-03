@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
@@ -42,6 +43,12 @@ Route::middleware('auth')->group(function () {
 Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    
+    // Profile Management
+    Route::get('profil', [AdminProfileController::class, 'index'])->name('profile.index');
+    Route::post('profil/foto', [AdminProfileController::class, 'updatePhoto'])->name('profile.photo');
+    Route::post('profil/info', [AdminProfileController::class, 'updateInfo'])->name('profile.info');
+    Route::post('profil/password', [AdminProfileController::class, 'updatePassword'])->name('profile.password');
     
     // Categories Management
     Route::resource('kategori', AdminCategoryController::class)->names('categories');

@@ -545,6 +545,10 @@
 
         <div class="nav-section">
             <div class="nav-section-title">Lainnya</div>
+            <a href="{{ route('admin.profile.index') }}" class="nav-link {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+                <i class="fas fa-user-cog"></i>
+                Pengaturan Profil
+            </a>
             <a href="{{ route('home') }}" class="nav-link" target="_blank">
                 <i class="fas fa-globe"></i>
                 Lihat Website
@@ -568,12 +572,18 @@
                 <p>@yield('subtitle')</p>
             </div>
             <div class="header-actions">
-                <div class="user-menu">
+                <a href="{{ route('admin.profile.index') }}" class="user-menu" style="text-decoration: none;">
                     <div class="user-avatar">
-                        <img src="{{ asset('images/admin-profile.jpg') }}" alt="{{ auth()->user()->name }}">
+                        @if(auth()->user()->profile_photo)
+                            <img src="{{ asset('storage/' . auth()->user()->profile_photo) }}" alt="{{ auth()->user()->name }}">
+                        @elseif(file_exists(public_path('images/admin-profile.jpg')))
+                            <img src="{{ asset('images/admin-profile.jpg') }}" alt="{{ auth()->user()->name }}">
+                        @else
+                            {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                        @endif
                     </div>
                     <span>{{ auth()->user()->name }}</span>
-                </div>
+                </a>
             </div>
         </header>
 
