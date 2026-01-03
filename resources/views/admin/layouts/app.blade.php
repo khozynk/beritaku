@@ -169,6 +169,13 @@
             justify-content: center;
             color: white;
             font-weight: 600;
+            overflow: hidden;
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Content Area */
@@ -563,7 +570,7 @@
             <div class="header-actions">
                 <div class="user-menu">
                     <div class="user-avatar">
-                        {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                        <img src="{{ asset('images/admin-profile.jpg') }}" alt="{{ auth()->user()->name }}">
                     </div>
                     <span>{{ auth()->user()->name }}</span>
                 </div>
